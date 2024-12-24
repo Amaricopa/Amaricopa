@@ -63,6 +63,28 @@
                     print(z_score, p_value)</p>
             </div>
         </div>
+        <div class="row">
+            <div class="col-1 bg-light">
+                <p>Logistic Regression</p>
+            </div>
+            <div class="col-6">
+                <p>measure relationships between independent variables and a categorical dependent variable.</p>
+                <p>Create an intercept and a dummy variable:<br>
+                    df2['intercept'] = 1<br>
+                    df2[['ab_page']] = pd.get_dummies(df['group'], drop_first=True, dtype=int) #get_dummies requires 2 new columns; one will be dropped<br>
+                    df2.head()<br>
+                </p>
+                <p>
+                    Create model and fit it to the data:<br>
+                    logit_mod = sm.Logit(df2['converted'], df2[['intercept', 'ab_page']])<br>
+                    results = logit_mod.fit()
+                </p>
+                <p>
+                    Review the results:<br>
+                    results.summary2()
+                </p>
+            </div>
+        </div>
      </main>
     </body>
 </html>
