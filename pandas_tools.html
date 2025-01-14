@@ -15,7 +15,7 @@
      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
      <div class="jumbotron p-2 p-md-2">
         <h1 class="display-4 font-italic text-center">Pandas Tools</h1>
-        <h5 class="lead text-center">Subsetting Dataframes.</h3>
+        <h5 class="lead text-center">Subsetting Dataframes.</h5>
      </div>
      <main role="main" class="container">
         <div class="row">
@@ -63,6 +63,47 @@
             </div>
             <div class="col-6">
                 <p>I think this is just another name for using brackets.</p>
+            </div>
+        </div>
+        <h5 class="lead text-center">Cleaning Dataframes</h5>
+        <div class="row">
+            <div class="col-2 bg-light">
+                <p>df.info()</p>
+            </div>
+            <div class="col-6">
+                <p>Lists dataframe columns with their data types and non-null values</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-2 bg-light">
+                <p>df.duplicated().sum()</p>
+            </div>
+            <div class="col-6">
+                <p>Counts duplicate rows. Can subset by column or index.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-2 bg-light">
+                <p>df.col.nunique()</p>
+            </div>
+            <div class="col-6">
+                <p>Counts the number of unique values in column.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-2 bg-light">
+                <p>df.col.unique()</p>
+            </div>
+            <div class="col-6">
+                <p>Lists unique values in column.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-2 bg-light">
+                <p>df.sample(5)</p>
+            </div>
+            <div class="col-6">
+                <p>Takes a random sample of 5 rows.</p>
             </div>
         </div>
      </main>
