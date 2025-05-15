@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Michael Roche</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  </head>
+  <body>
+    <script src="navbar.js"></script>
+
+    <!-- NAVBAR -->
+    <div id="navbar-container"></div>
+
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+     <div class="jumbotron p-2 p-md-2">
+        <h1 class="display-4 font-italic text-center">R: Lessons Learned</h1>
+     </div>
+     <main role="main" class="container">
+        <div class="row">
+            <div class="col-1 bg-light">
+                <p>General Thoughts:</p>
+            </div>
+            <div class="col-6">
+                <p>Pro: Subsetting dataframes in R is easier than it is in Pandas.</p>
+                <p>Con: Documentation of R tools is less beginner-friendly.</p>
+                <p>Con: R Studio files do not convert directly into html pages for use in my portfolio, like Jupyter Notebooks do. Jupyter Notebooks can use an R kernel, but setting it up took days, and cells had to be run one at a time. Running the entire notebook with an R kernel hung up my system.</p>
+                <p>Every tool I used in my R project had an equivalent tool in Pandas.</p>
+                <p>Conclusion: For developing a portfolio that I can publish online, Jupyter/Pandas is more convenient. For exploring data and creating graphs, R and R Studio is more convenient. </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-1 bg-light">
+                <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.loc.html">pd.df.loc</a>
+            </div>
+            <div class="col-6">
+                <p>Very fast when selecting rows based on labels.</p>
+                <p>Better at handling complex queries</p>
+                <p class="lh-1">
+                    df.loc[row_label]<br>
+                    df.loc[[row_label1, row_label2]]<br>
+                    df.loc[df['shield'] > 6]<br>
+                    df.loc[df['shield'] > 6, ['max_speed']] #returns just the 'max_speed' column<br>
+                    df.loc[(df['max_speed'] > 1) & (df['shield'] < 8)]<br>
+                    df.loc[(df['max_speed'] > 4) | (df['shield'] < 5)]<br>
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-1 bg-light">
+                <a href="https://pandas.pydata.org/pandas-docs/version/1.0/getting_started/intro_tutorials/03_subset_data.html">Brackets</a>
+            </div>
+            <div class="col-6">
+                <p>Useful for selecting just rows based on complex criteria.</p>
+                <p class="lh-1">
+                    above_35 = titanic[titanic["Age"] > 35]<br>
+                    class_23 = titanic[titanic["Pclass"].isin([2, 3])]<br>
+                    class_23 = titanic[(titanic["Pclass"] == 2) | (titanic["Pclass"] == 3)]<br>
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-1 bg-light">
+                <p>Masking</p>
+            </div>
+            <div class="col-6">
+                <p>I think this is just another name for using brackets.</p>
+            </div>
+        </div>
+        <h5 class="lead text-center">Cleaning Dataframes</h5>
+        <div class="row">
+            <div class="col-2 bg-light">
+                <p>df.info()</p>
+            </div>
+            <div class="col-6">
+                <p>Lists dataframe columns with their data types and non-null values</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-2 bg-light">
+                <p>df.duplicated().sum()</p>
+            </div>
+            <div class="col-6">
+                <p>Counts duplicate rows. Can subset by column or index.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-2 bg-light">
+                <p>df.col.nunique()</p>
+            </div>
+            <div class="col-6">
+                <p>Counts the number of unique values in column.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-2 bg-light">
+                <p>df.col.unique()</p>
+            </div>
+            <div class="col-6">
+                <p>Lists unique values in column.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-2 bg-light">
+                <p>df.sample(5)</p>
+            </div>
+            <div class="col-6">
+                <p>Takes a random sample of 5 rows.</p>
+            </div>
+        </div>
+     </main>
+    </body>
+</html>
